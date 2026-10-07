@@ -1,0 +1,7 @@
+# 这两个 .bat 是 GBK 编码 + CRLF，必须原样保存，否则 Windows 上会跑不起来
+*.bat text eol=crlf
+*.manifest text eol=crlf
+
+*.exe binary
+*.dll binary
+*.png binary

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- 可选：如果你装了 .NET SDK（8.0 及以上），可以用它构建：
+         dotnet publish NetStatus.csproj -c Release
+       没有 SDK 也没关系，直接用 build.bat（调用 Windows 自带的编译器）。 -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>NetStatus</AssemblyName>
+    <RootNamespace>NetStatus</RootNamespace>
+    <ApplicationManifest>src\app.manifest</ApplicationManifest>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <SatelliteResourceLanguages>zh-Hans</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- CPU 温度 / 热区走 WMI，.NET 8 需要显式引用这个包 -->
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
